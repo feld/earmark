@@ -72,6 +72,16 @@ defmodule Acceptance.Html.LinkImages.LinkTest do
     end
   end
 
+  describe "Query params" do
+    test "format correctly" do
+      markdown = "https://www.webtoons.com/en/challenge/whats-up-beanie/bike-ride/viewer?title_no=295880&episode_no=394"
+      html     = "<p>\n<a href=\"https://www.webtoons.com/en/challenge/whats-up-beanie/bike-ride/viewer?title_no=295880&episode_no=394\">https://www.webtoons.com/en/challenge/whats-up-beanie/bike-ride/viewer?title_no=295880&episode_no=394</a></p>\n"
+      messages = []
+
+      assert as_html(markdown) == {:ok, html, messages}
+    end
+  end
+
 end
 
 # SPDX-License-Identifier: Apache-2.0
